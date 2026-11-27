@@ -139,4 +139,7 @@ For a real design, add a safety margin (for example, target xD ≥ 0.9905) rathe
 ## Possible extensions
 
 - Add more points near the optimum and retrain (adaptive sampling).
-
+- Add pressure and feed temperature as inputs.
+- Add prediction-uncertainty estimates (for example, a Gaussian process or ensemble).
+- Try physics-informed training, with mass and energy balances in the loss.
+- Extend to a ternary system or a full flowsheet.
