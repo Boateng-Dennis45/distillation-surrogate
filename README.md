@@ -73,7 +73,6 @@ Trained on reflux ratio < 3.2 (680 cases) and tested on reflux ratio ≥ 3.2 (32
 
 Tree-based models cannot predict outside the range they were trained on, so their predictions flatten at the edge. The neural network kept tracking Aspen for both outputs.
 
-![Stress test](figures/fig_stress_test.png)
 ![Parity plots](figures/fig_parity.png)
 
 ### Optimization
@@ -124,20 +123,18 @@ For a real design, add a safety margin (for example, target xD ≥ 0.9905) rathe
 2. Install Python 3.13/3.14 and `pip install pywin32` (Windows only, needed for COM automation).
 3. Generate `inputs.csv` with the Latin hypercube cell in the notebook.
 4. Run `python run_aspen.py` (set `MAX_ROWS = None` for all 1,000 cases) to create `results.csv`.
-5. Run `python check_results.py` to confirm the mass balances.
-6. Open `surrogate_modeling.ipynb` (for example in Google Colab), upload `results.csv`, and run the cells in order.
-7. Run `python verify_aspen.py` to check optimization results against Aspen.
+5. Open `surrogate_modeling.ipynb` (for example in Google Colab), upload `results.csv`, and run the cells in order.
+6. Run `python verify_aspen.py` to check optimization results against Aspen.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `run_aspen.py` | Runs the sampled cases in Aspen and writes `results.csv` |
-| `check_results.py` | Mass-balance check on the results |
 | `verify_aspen.py` | Runs chosen cases in Aspen to verify surrogate predictions |
 | `inputs.csv`, `results.csv` | Sampled inputs and Aspen outputs |
 | `surrogate_modeling.ipynb` | Model training, comparison, stress test, optimization |
-| `figures/` | Plots used in this README |
+| `fig_*.png` | Plots used in this README |
 
 ## Possible extensions
 
